@@ -1,0 +1,23 @@
+
+#global width, height
+width = height = 600
+#size(width, height)
+background(0.95, 0.95, 0.95)
+nofill()
+
+s = 20 # must be int
+stroke(0, 100 / 255, 0)
+for x in range(s // 2, width, s):
+    for y in range(s // 2, height, s):
+        ellipse(x, y, s, s)
+        # point(x, y)
+
+stroke(0, 0, 100 / 255)
+s = 22 # could be float
+cols, rows = int(width / s), int(height / s)
+for ix in range(cols):
+    x = s / 2 + ix * s
+    for iy in range(rows):
+        y = s / 2 + iy * s
+        ellipse(x, y, s, s)
+        # point(x, y)

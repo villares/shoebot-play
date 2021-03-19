@@ -1,0 +1,62 @@
+
+size(600,600)
+background(1)
+ellipsemode(CORNER) 
+
+nostroke()
+fill(0.95, 0.75, 0)
+rect(10, 10, 35, 35)
+# see how roundness affects the shape
+rect(55, 10, 35, 35, 0.3)
+rect(10, 55, 35, 35, 0.7)
+rect(55, 55, 35, 35, 1)
+
+ellipse(110, 20, 30, 60)
+ellipse(150, 30, 40, 40) # circle
+
+arrow(250, 40, 40) # NORMAL is default arrow type
+arrow(290, 40, 40, FORTYFIVE)
+
+star(325, 25, 5, 20, 10)  # top left
+star(375, 25, 10, 20, 3)  # top right
+star(325, 75, 20, 20, 17) # bottom left
+star(375, 75, 40, 20, 19) # bottom righ
+
+translate(0, 100)
+stroke(0.5)
+strokewidth(3)
+line(20, 20, 80, 80)
+line(20, 80, 80, 20)
+line(50, 20, 50, 80)
+
+translate(100, 0)
+nofill()
+strokewidth(2)
+
+rectmode(CORNER)  # default, red
+stroke(0.8, 0.1, 0.1)
+rect(25, 25, 40, 40)
+
+rectmode(CENTER)  # green
+stroke(0.1, 0.8, 0.1)
+rect(25, 25, 40, 40)
+
+rectmode(CORNERS)  # blue
+stroke(0.1, 0.1, 0.8)
+rect(25, 25, 40, 40)
+
+translate(100, 0)
+
+ellipsemode(CORNER)  # default, red
+stroke(0.8, 0.1, 0.1)
+ellipse(25, 25, 40, 40)
+
+ellipsemode(CENTER)  # green
+stroke(0.1, 0.8, 0.1)
+ellipse(25, 25, 40, 40)
+
+ellipsemode(CORNERS)  # blue
+stroke(0.1, 0.1, 0.8)
+ellipse(25, 25, 40, 40)
+
+snapshot("a.svg")
