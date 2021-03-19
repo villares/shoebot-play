@@ -14,15 +14,15 @@ On **shoebot** color arguments are from `0` to `1` and not `0` to `255`, unless 
 | `fontsize()`             |                                                                                                                                             | `textSize()`            |                                               |
 | `transform()`            | transform mode can be `CENTER` (from each object's center) or `CORNER` (from the coordinate system's origin)                                | [no equivalent]         | Processing is alwayss like shoebot's `CORNER` |
 | `MOUSEX`, `MOUSEY`       |                                                                                                                                             | `mouseX`, `mouseY`      |                                               |
+| `WIDTH`, `HEIGHT`        |                                                                                                                                             | `width`, `height`       |                                               |
 
 ###### Breaking state with custom attributes in optional arguments
 
-**Note that in Processing `rect()` returns `None` and not an object you could transform!***
-So you could do:
+*Note that in Processing `rect()` returns `None` and not an object you could transform! But in **shoebot** you can do this:*
 
 `rect(20, 20, 100, 100, fill=(1, 0, 0))`
 
-which is the same as
+*which is the same as*
 
 ```python
 r = rect(20, 20, 100, 100)
@@ -35,7 +35,6 @@ r.scale(x, y=None)
 r.skew(x, y=None)
 # The transformations are then applied only to rectangle r.
 ```
-
 
 With the `text()` command you can also use the state-less *font* and *fontsize* parameters:
 
