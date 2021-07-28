@@ -2,14 +2,22 @@
 
 Some experiments with the wonderful **`shoebot`**, the *easy vector graphics with Python* library & environment.
 
-##### Tips for going from Processing Python to shoebot (and maybe the other way too)
+##### Tips for going from Processing to shoebot
 
-On **shoebot** color arguments are from `0` to `1` and not `0` to `255`, unless yous specify with `colormode()` (similar to Processing's `colorMode()`)
+Here are some things that I noticed are different for people coming from Processing Python mode.
+
+On **shoebot** color arguments are from `0` to `1` and not `0` to `255`, unless yous use `colorrange(255)` or `colormode(RGBA, range=255)`.
+
+When you draw ellipses and circles `ellipsemode(CORNER)` is the default in shoebot (use `CENTER` for the default Processing behavior).
+
+There are no `tranform()` modes in Processing, and shoebot default mode is `transform(CENTER)` that can be very useful (makes elements rotate around themselves). You can get a Processing-like behavior with `transform(CORNER)`.
+
 
 | shoebot                  | <sub>comment and/or example</sub>                                                                                                           | Processing              | <sub>comment and/or example</sub>             |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | --------------------------------------------- |
 | `colormode()`            | Default is `RGBA` and range from `0` to `1` for each channel. One can get behaviour similar to Processing with `colormode(RGBA, range=255)` | `colorMode()`           | `RGB` or `HSB` (both include alpha)           |
 | `nofill()`/ `nostroke()` |                                                                                                                                             | `noFill()`/`noStroke()` |                                               |
+| `strokewidth()` |                                                                                                                                             | `strokeWeight()` |                                               |
 | `font()`                 | check how to use!                                                                                                                           | `textFont()`            |                                               |
 | `fontsize()`             |                                                                                                                                             | `textSize()`            |                                               |
 | `transform()`            | transform mode can be `CENTER` (from each object's center) or `CORNER` (from the coordinate system's origin)                                | [no equivalent]         | Processing is alwayss like shoebot's `CORNER` |
