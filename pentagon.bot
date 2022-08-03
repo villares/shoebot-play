@@ -1,0 +1,24 @@
+from math import pi
+HALF_PI = pi / 2
+
+def setup(): 
+    size(200, 200) 
+
+    stroke(0)
+    pentagon(100, 100) 
+    pentagon(160, 100, r=-1) 
+    pentagon(40, 100, r=1) 
+    pentagon(100, 100, r=2) 
+     
+def pentagon(x, y, s=10, r=0): 
+    pts = ((-2, 0), (2, 0), (3, 3), (0, 4), (-3, 3)) 
+    transform(CORNER)   
+    push() 
+    fill(1)
+    translate(x, y) 
+    rotate(radians=HALF_PI * r) 
+    beginpath(pts[0][0] * s, pts[0][1] * s) 
+    for i, j in pts[1:]: 
+        lineto(i * s, j * s) 
+    endpath()
+    pop()
